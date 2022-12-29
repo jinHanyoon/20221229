@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css">
+    
+    <script src="/js/main.js"></script>
+    <script>
+        $(document).ready(function(){
+            var current=0
+            $('.page03 .newList li').eq(0).addClass('color')
+
+            $('.page01_list li').hover(function(){
+                var n=$(this).index()
+              $('.page01_list li h1').eq(n).addClass('on')
+              $('.page01_list li img').eq(n).addClass('on')
+          
+            },function(){
+                $('.page01_list li h1').removeClass('on')
+                $('.page01_list li img').removeClass('on')
+            }
+            
+            )
+            $('.page02_left .page02_list li').hover(function(){
+                var page02 = $(this).index()
+                $('.hidden_text').eq(page02).addClass('move')
+                $('.page02_list img').eq(page02).addClass('on')
+                
+            },function(){
+                $('.hidden_text').removeClass('move')
+                $('.page02_list img').removeClass('on')
+            }
+            )
+            $('.page02_right li').hover(function(){
+                $('.page02_right .hidden_text').addClass('move')
+                $('.page02_right img').addClass('on')
+            },function(){
+                $('.page02_right .hidden_text').removeClass('move')
+                $('.page02_right img').removeClass('on')
+            }
+            )
+
+                    
+            $('.newList li').click(function(){
+                var q= $(this).index()
+                console.log(q)
+                console.log('작동됨')
+                move(q)
+
+                function move(q){
+                if(current == q)return;//같은 버튼을 클릭했을때 실행되지 않게 함 
+                let currentE1 = $('.page03_list li').eq(current);//슬라이드에서 현재보이는 이미지 li
+                let nextE1 = $('.page03_list li').eq(q); //슬라이드에서 다음에 보이는 이미지 li
+
+
+                currentE1.css({left:'0%'}).stop().animate({left:'100%'})
+                nextE1.css({left:'100%'}).stop().animate({left:'0%'})
+                current =q
+                $('.page03 .newList li').removeClass('color')
+
+                $('.page03 .newList li').eq(q).addClass('color')
+
+            
+        }
+            })
+
+            $('.page03_info div').hover(function(){
+                var page03_info = $(this).index()
+                $('.page03_info figure').eq(page03_info).addClass('move')
+                $('.page03_info div img').eq(page03_info).addClass('color')
+            },
+            function(){
+                $('.page03_info figure').removeClass('move')
+                $('.page03_info div img').removeClass('color')
+
+            })
+
+
+
+            $('.page03_info_box1 div').hover(function(){
+                var z = $(this).index()
+                console.log(z)
+                $('.page03_info_box1 figure').eq(z).addClass('move')
+                $('.page03_info_box1 div img').eq(z).addClass('color')
+
+            },
+            function(){
+                $('.page03_info_box1 div img').removeClass('color')
+
+                $('.page03_info_box1 figure').removeClass('move')
+            })
+
+            $('.page03_info_box2 div').hover(function(){
+                var z1 = $(this).index()
+                console.log(z1)
+                $('.page03_info_box2 div video').eq(z1).addClass('color')
+                $('.page03_info_box2 figure').eq(z1).addClass('move')
+            },
+            function(){
+                $('.page03_info_box2 figure').removeClass('move')
+                $('.page03_info_box2 div video').removeClass('color')
+            })
+
+
+        })
+
+    </script>
+</head>
+<body>
+    <div class="wrap">
+        <div class="main_page">
+            <video src="/img/newmove (1).mp4" muted autoplay loop></video>
+        <header>
+            <div class="header_in">
+                <h1 class="logo">logo</h1>
+                <nav>
+                    <div class="nav_in">
+                        <ul class="nav_menu">
+                            <li><a href="#"> 회사소개</a></li>
+                            <li><a href="#"> 사업분야</a></li>
+                            <li><a href="#"> 윤리경영</a></li>
+                            <li><a href="#"> 뉴스룸</a></li>
+                            <li><a href="#"> 고객센터</a></li>
+                               
+                        </ul>
+                        <div class="sub_menu">
+                            <ul class="sub_menuList">
+                                <li> <a href="#">메뉴</a></li>
+                                <li> <a href="#">언어</a></li>
+                                <li> <a href="#">찾기</a></li>
+                        
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <section class="page01_se">
+        <div class="page01">
+                <ul class="page01_list">
+                    <li>
+                        <img src="/img/page01list (1).jpg">
+                        <h1>
+                            부동산 개발</h1>
+                    </li>
+                    <li>
+                        <img src="/img/page01list (2).jpg">
+                        <h1>자산운용</h1>
+                    </li>
+                    <li>
+                        <img src="/img/page01list (3).jpg">
+
+                        <h1>협력회사</h1>
+                    </li>
+                    <li>
+                        <img src="/img/page01list (4).jpg">
+
+                        <h1>사회공헌</h1>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="page02_se">
+        <div class="page02">
+            <h1 class="page02_title">윤리경영</h1>
+            <div class="page02_title_text">
+                <p>저희가 지향하는 윤리경영은 준법과 윤리에 기반한 경영활동을 통해</p>
+                <p>모든 이해관계자에게 기여함으로써 지속적으로 성장해 나가는 것입니다</p>
+            </div>
+            <div class="page02_contnet">
+            <div class="page02_left">
+                <ul class="page02_list">
+                <li>
+                    <img src="/img/page03img (1).jpg">
+
+                    <h1>임직원</h1>
+
+                    <div class="hidden_text">
+                        <p>임직원의 행복과</p>
+                        <p>발전을 중시합니다</p>
+
+                    </div>
+
+                </li>
+                <li>
+                    <img src="/img/page03img (2).jpg">
+
+                    <h1>고객</h1>
+                    <div class="hidden_text">
+                        <p>고객의 만족을</p>
+                        <p>추구합니다.</p>
+
+                    </div>
+                </li>
+                <li>
+                    <img src="/img/page03img (3).jpg">
+
+                    <h1>협력회사</h1>
+                    <div class="hidden_text">
+                        <p>협력회사와 동방성장을</p>
+                        <p>실현합니다</p>
+
+                    </div>
+                </li>
+                <li>
+                    <img src="/img/page03img (4).jpg">
+
+                    <h1>가치</h1>
+                    <div class="hidden_text">
+                        <p>주주가치를</p>
+                        <p>증대합니다</p>
+
+                    </div>
+                </li>
+                <li>
+                    <img src="/img/page03img (5).jpg">
+
+                    <h1>사회</h1>
+                    <div class="hidden_text">
+                        <p>사회에 대한 책임을</p>
+                        <p>다합니다</p>
+
+                    </div>
+                </li>
+                <li>
+                    <img src="/img/page03img (6).jpg">
+
+                    <h1>윤리</h1>
+                    <div class="hidden_text">
+                        <p>윤리경영을 기반으로한</p>
+                        <p>지속성장을 추구합니다</p>
+
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        <div class="page02_right">
+            <li>
+                <img src="/img/page03img (7).jpg">
+
+                <h1>성과</h1>
+                <div class="hidden_text">
+                    <p>보고서 및 주요성과</p>
+                    <p>윤리경영 주요활동 및 성과를 소개합니다</p>
+
+                </div>
+            </li>
+        </div>
+            </div>
+        </div>
+
+
+    </section>
+    <section class="page03_se">
+        <div class="page03">
+            <h1 class="page03_title">뉴스룸</h1>
+            <ul class="newList">
+                <li>전체</li>
+                <li>국내소식</li>
+                <li>해외소식</li>
+            </ul>
+            <ul class="page03_list">
+            <li>
+                <div class="page03_info">
+                    <div>
+                        <img src="/img/newimg (1).jpg">
+                    <figure>
+                        <p>미국,</p>
+                        <p>코로나로 인해</p>
+                        <p>금리 인상</p>
+                        <p>부동산 타격</p>
+                    </figure>
+                    </div>
+                    <div>
+                        <img src="/img/newimg (2).jpg">
+
+                        <figure>
+                            <p>호주,</p>
+                            <p>내년 개헌 투표</p>
+                            <p>원주민</p>
+                            <p>대표기관 설립</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg (3).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>속절없이 떨어지는</p>
+                            <p>아파트값</p>
+                            <p>서울 8주 연속</p>
+                            <p>역대 최대 하락</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg (4).jpg">
+
+                        <figure>
+                            <p>베트남,</p>
+                            <p>올해</p>
+                            <p>경제성장률 8%</p>
+                            <p>1997년 이후 최고</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg (5).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>금융당국</p>
+                            <p>"2금융권 대출중단"</p>
+                            <p>말아야</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg (6).jpg">
+
+                        <figure>
+                            <p>태국,</p>
+                            <p>부하에 돈 뜯은 </p>
+                            <p>고위 공무원 체포</p>
+                            <p>외딴곳 접근 협박,</p>
+                        </figure>
+                    </div>
+                    <div>
+                        <img src="/img/newimg (7).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>코스닥,코스피</p>
+                            <p>폐장일 까지 급락 마감</p>
+                            <p>기관,외인 매도</p>
+                        </figure>
+                    </div>
+                    <div>
+                        <img src="/img/newimg (8).jpg">
+
+                        <figure>
+                            <p>러시아,</p>
+                            <p>"젤렌스키"</p>
+                            <p>'평화공식'으론</p>
+                            <p>협상 안해</p>
+                        </figure>
+                    </div>
+                </div>
+
+            </li>
+            <li>
+                <div class="page03_info_box1">
+                    <div>
+                        <img src="/img/newimg (9).jpg">
+
+                    <figure>
+                        <p>한국</p>
+                        <p>테슬라 연계</p>
+                        <p>ELS 2천억원,</p>
+                        <p>주가 급락</p>
+                    </figure>
+                    </div>
+                    <div>
+                        <img src="/img/newimg (10).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>최문숙</p>
+                            <p>"KH그룹"</p>
+                            <p>알펜시아 낙찰에</p>
+                            <p>개입 안 해 </p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg (11).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>부산 영도구</p>
+                            <p>구청사 내 </p>
+                            <p>친환경 광장 조성</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg12 (1).jpg">
+                        <figure>
+                            <p>한국</p>
+                            <p>코스닥,코스피</p>
+                            <p>폐장일 까지 급락 마감</p>
+                            <p>기관,외인 매도</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg12 (2).jpg">
+
+                        <figure>
+
+                            <p>한국</p>
+                            <p>수출금액지수 </p>
+                            <p>1년 전보다 11% ↓</p>
+                            <p>2년 6개월만에 </p>
+                            <p>최대폭 하락 </p>
+
+                        </figure>
+
+                    </div>
+                    <div>
+                        <img src="/img/newimg12 (3).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>거래소, 내년</p>
+                            <p>'30분'주기 단일가 매매</p>
+                            <p>적용할 종목 확정</p>
+                        </figure>
+                    </div>
+                    <div>
+                        <img src="/img/newimg12 (4).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>금융당국</p>
+                            <p>"2금융권 대출중단"</p>
+                            <p>말아야</p>
+                        </figure>
+                    </div>
+                    <div>
+                        <img src="/img/newimg12 (5).jpg">
+
+                        <figure>
+                            <p>한국</p>
+                            <p>속절없이 떨어지는</p>
+                            <p>아파트값</p>
+                            <p>서울 8주 연속</p>
+                            <p>역대 최대 하락</p>
+                        </figure>
+                    </div>
+                </div>
+
+
+            </li>
+            <li>
+                <div class="page03_info_box2">
+                    <div>
+                        <video src="/img/newmove (1).mp4" muted autoplay loop></video>
+
+                    <figure>
+                        <p>러시아,</p>
+                        <p>신년맞이</p>
+                        <p>불꽃놀이 취소</p>
+                        <p>축제분위기 사라진 </p>
+                        <p>세밀</p>
+                    </figure>
+                    </div>
+                    <div>
+                        <video src="/img/newmove (2).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>태국,</p>
+                            <p>부하에 돈 뜯은 </p>
+                            <p>고위 공무원 체포</p>
+                            <p>외딴곳 접근 협박,</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <video src="/img/newmove (3).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>캄보디아,</p>
+                            <p>카지노 호텔서 큰불</p>
+                            <p>최소 10명사망</p>
+                            <p>30명 부상</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <video src="/img/newmove (4).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>베트남,</p>
+                            <p>올해</p>
+                            <p>경제성장률 8%</p>
+                            <p>1997년 이후 최고</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <video src="/img/newmove (5).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>유엔,</p>
+                            <p>"탈레반" </p>
+                            <p>여성활동 금지에</p>
+                            <p>일부구호 활동 중단</p>
+                        </figure>
+
+                    </div>
+                    <div>
+                        <video src="/img/newmove (6).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>방글라데시,</p>
+                            <p>'최악 교통 체증'</p>
+                            <p>다카서</p>
+                            <p>첫 도시철도 개통</p>
+                        </figure>
+                    </div>
+                    <div>
+                        <video src="/img/newmove (7).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>러시아,</p>
+                            <p>"젤렌스키"</p>
+                            <p>'평화공식'으론</p>
+                            <p>협상 안해</p>
+                        </figure>
+                    </div>
+                    <div>
+                        <video src="/img/newmove (8).mp4" muted autoplay loop></video>
+
+                        <figure>
+                            <p>미국,</p>
+                            <p>코로나로 인해</p>
+                            <p>금리 인상</p>
+                            <p>부동산 타격</p>
+                        </figure>
+                    </div>
+                </div>
+
+
+
+            </li>
+        </ul>
+        </div>
+    </section>
+    <section class="page04_se"></section>
+
+    </div>
+
+    
+</body>
+</html>
